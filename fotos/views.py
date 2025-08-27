@@ -5,8 +5,8 @@ from .models import Foto
 def home(request):
     return render(request, 'fotos/home.html')
 
-def foto_detail(request):
-    foto = get_object_or_404(Foto, id-id)
+def foto_detail(request, id):
+    foto = get_object_or_404(Foto, id=id)
     context = {'foto': foto}
     return render(request, 'fotos/foto_detail.html', context)
 

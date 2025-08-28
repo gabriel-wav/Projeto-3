@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receitas</title>
+    <title>Fotos</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
@@ -31,7 +31,7 @@
                 </div>
 
                 <h1 class="text-4xl font-bold text-center sm:text-left">
-                    Minhas Receitas Deliciosas
+                    Minha Galeria de Fotos
                 </h1>
             </div>
             <nav class="mt-4 sm:mt-0">
@@ -41,13 +41,13 @@
     </header>
 
     <section class="container mx-auto mt-8 p-4 flex justify-center">
-        <form method="get" action="{% url 'pesquisar_receitas' %}"
+        <form method="get" action="{% url 'pesquisar_fotos' %}"
             class="w-full max-w-lg flex bg-white rounded-full shadow-md overflow-hidden">
 
 
-            <input type="text" placeholder="Pesquisar receitas..." name="q"
+            <input type="text" placeholder="Pesquisar fotos..." name="q"
                 class="flex-grow p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-l-full pl-5">
-            <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white p-3 px-6 
+            <button type="submit" class="bg-blue-400 hover:bg-blue-600 text-white p-3 px-6 
 rounded-r-full transition duration-300 ease-in-out flex items-center justify-center">
                 <i class="fas fa-search mr-2"></i> Pesquisar
             </button>
@@ -60,99 +60,91 @@ rounded-r-full transition duration-300 ease-in-out flex items-center justify-cen
     <main class="container mx-auto p-6 mt-8 bg-white rounded-lg shadow-md">
 
         <h2 class="text-2xl font-semibold mb-6 text-center">Nossas Últimas
-            Receitas</h2>
+            Fotos</h2>
 
         <div class="flex flex-wrap justify-center gap-6">
 
             <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-
 1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow 
 duration-300 ease-in-out">
-                <img src="{% static 'receitas/img/bolo_abacaxi.jpg' %}" alt="Bolo de Abacaxi"
+                <img src="{% static 'galeria/brasil_escadarias.jpg' %}" alt="Escadarias no Rio de Janeiro"
                     class="w-full h-48 object-cover rounded-md mb-4">
-                <h3 class="text-xl font-bold mb-2 text-gray-800">Receita de Bolo
-                    de Abacaxi</h3>
-                <p class="text-gray-600 mb-4">Um bolo clássico, úmido e
-                    delicioso, perfeito para qualquer ocasião.</p>
-                <a href="{% url 'receita_detail' id=1 %}"
-                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Escadarias no Rio de Janeiro</h3>
+                <p class="text-gray-600 mb-4">Clássica escadaria localizada no RJ.</p>
+                <a href="{% url 'foto_detail' id=1 %}"
+                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Foto &rarr;</a>
             </div>
 
             <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-
 1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow 
 duration-300 ease-in-out">
-                <img src="{% static 'receitas/img/frango_assado.jpg' %}" alt="Frango Assado"
+                <img src="{% static 'fotos/outra_foto.jpg' %}" alt="Outra foto"
                     class="w-full h-48 object-cover rounded-md mb-4">
-                <h3 class="text-xl font-bold mb-2 text-gray-800">Frango Assado</h3>
-                <p class="text-gray-600 mb-4">Uma receita simples e saborosa de
-                    frango assado com um toque de ervas frescas.</p>
-                <a href="{% url 'receita_detail' id=2 %}"
-                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Outra Foto Qualquer</h3>
+                <p class="text-gray-600 mb-4">Uma outra foto aleatória para preencher o espaço.</p>
+                <a href="{% url 'foto_detail' id=2 %}"
+                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Foto &rarr;</a>
             </div>
 
             <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-
 1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow 
 duration-300 ease-in-out">
-                <img src="{% static 'receitas/img/salada_maionese.jpg' %}" alt="Salada de Maionese"
+                <img src="{% static 'fotos/mais_uma_foto.jpg' %}" alt="Mais uma foto"
                     class="w-full h-48 object-cover rounded-md mb-4">
-                <h3 class="text-xl font-bold mb-2 text-gray-800">Salada
-                    de Maionese</h3>
-                <p class="text-gray-600 mb-4">Uma salada deliciosa e refrescante,
-                    cheia de sabor.</p>
-                <a href="{% url 'receita_detail' id=3 %}"
-                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Mais Uma Foto</h3>
+                <p class="text-gray-600 mb-4">Mais uma foto para preencher o espaço.</p>
+                <a href="{% url 'foto_detail' id=3 %}"
+                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Foto &rarr;</a>
             </div>
 
             <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-
 1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow 
 duration-300 ease-in-out">
-                <img src="{% static 'receitas/img/torta-de-morango.jpg' %}" alt="Torta de Morango"
+                <img src="{% static 'fotos/foto_quatro.jpg' %}" alt="Foto Quatro"
                     class="w-full h-48 object-cover rounded-md mb-4">
                 <h3 class="text-xl font-bold mb-2 text-gray-800">Torta de Morango</h3>
-                <p class="text-gray-600 mb-4">Uma torta clássica com recheio de
-                    morango doce e azedinho.</p>
-                <a href="{% url 'receita_detail' id=4 %}"
-                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
+                <p class="text-gray-600 mb-4">Uma foto de uma torta de morango.</p>
+                <a href="{% url 'foto_detail' id=4 %}"
+                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Foto &rarr;</a>
             </div>
 
             <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-
 1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow 
 duration-300 ease-in-out">
-                <img src="{% static 'receitas/img/sopa-de-frango-com-legumes.jpg' %}" alt="Sopa de Legumes"
+                <img src="{% static 'fotos/foto_cinco.jpg' %}" alt="Foto Cinco"
                     class="w-full h-48 object-cover rounded-md mb-4">
-                <h3 class="text-xl font-bold mb-2 text-gray-800">Sopa de Legumes
-                </h3>
-                <p class="text-gray-600 mb-4">Uma sopa reconfortante e cheia de
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Foto Cinco</h3>
+                <p class="text-gray-600 mb-4">Uma foto reconfortante e cheia de
                     pedaços de vegetais frescos, perfeita para dias frios.</p>
-                <a href="{% url 'receita_detail' id=5 %}"
-                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
+                <a href="{% url 'foto_detail' id=5 %}"
+                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Foto &rarr;</a>
             </div>
 
             <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-
 1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow 
 duration-300 ease-in-out">
-                <img src="{% static 'receitas/img/pizza_champignon.jpg' %}" alt="Pizza de Cogumelos"
+                <img src="{% static 'fotos/foto_seis.jpg' %}" alt="Foto Seis"
                     class="w-full h-48 object-cover rounded-md mb-4">
-                <h3 class="text-xl font-bold mb-2 text-gray-800">Pizza de
-                    Cogumelos Selvagens</h3>
-                <p class="text-gray-600 mb-4">Uma pizza cremosa e exótica, com
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Foto Seis</h3>
+                <p class="text-gray-600 mb-4">Uma foto cremosa e exótica, com
                     uma mistura rica de cogumelos selvagens.</p>
-                <a href="{% url 'receita_detail' id=6 %}"
-                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Receita &rarr;</a>
+                <a href="{% url 'foto_detail' id=6 %}"
+                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Foto &rarr;</a>
             </div>
         </div>
     </main>
 
     <main class="container mx-auto p-6 mt-8 bg-white rounded-lg shadow-md">
         <h2 class="text-2xl font-semibold mb-4">Bem-vindo à sua página de
-            receitas!</h2>
+            fotos!</h2>
         <p class="text-lg text-gray-700">Aqui você poderá organizar e compartilhar suas
-            receitas favoritas.</p>
+            fotos favoritas.</p>
         <p class="mt-4 text-gray-600">Este é o início da sua jornada culinária com
             Django.</p>
     </main>
 
     <footer class="mt-12 p-6 text-center text-gray-600">
-        <p>&copy; 2025 Minhas Receitas. Todos os direitos reservados a Gabriel.</p>
+        <p>&copy; 2025 Minha Galeria de Fotos. Todos os direitos reservados a Gabriel.</p>
     </footer>
 
 

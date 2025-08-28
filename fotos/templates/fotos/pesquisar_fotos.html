@@ -50,13 +50,13 @@
                         <h3 class="text-xl font-bold mb-2 text-gray-800">{{ foto.title }}</h3>
                         <p class="text-gray-600 mb-4">{{ foto.description|truncatewords:20 }}</p>
                         <a href="{% url 'foto_detail' id=foto.id %}" 
-                           class="text-orange-600 hover:text-orange-800 font-semibold">
+                           class="text-blue-400 hover:text-blue-600 font-semibold">
                             Ver Foto &rarr;
                         </a>
                     </div>
                 {% endfor %}
             {% else %}
-                <p class="text-center text-gray-600">Tente uma busca diferente ou <a href="{% url 'home' %}" class="text-orange-600 hover:text-orange-800 font-semibold">volte para a home</a>.</p>
+                <p class="text-center text-gray-600">Tente uma busca diferente ou <a href="{% url 'home' %}" class="text-blue-400 hover:text-blue-600 font-semibold">volte para a home</a>.</p>
             {% endif %}
         </div>
     </main>

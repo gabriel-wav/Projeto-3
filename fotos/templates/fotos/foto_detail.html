@@ -38,18 +38,15 @@
 
     <main class="container mx-auto p-6 mt-8 bg-white rounded-lg shadow-md">
         <div class="flex flex-col md:flex-row gap-8">
-            {# Imagem da Foto #}
+            {# Imagem da Foto - Ajustado para ser maior #}
             {% if foto.image %}
-
-            <div class="md:w-1/2">
-                <img src="{{ foto.image.url }}" alt="{{ foto.title }}" class="w-full h-auto rounded-lg shadow-md">
-
+            <div class="md:w-3/4 lg:w-2/3 mx-auto"> {# Ajustado para ocupar 3/4 em md e 2/3 em lg #}
+                <img src="{{ foto.image.url }}" alt="{{ foto.title }}" class="w-full h-auto rounded-lg shadow-md object-contain"> {# Adicionado object-contain para não cortar #}
             </div>
-
             {% endif %}
 
             {# Detalhes da Foto #}
-            <div class="md:w-1/2">
+            <div class="md:w-1/4 lg:w-1/3 mt-6 md:mt-0"> {# Ajustado para ocupar o restante do espaço #}
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">{{ foto.title }}</h2>
                 <h3 class="text-2xl font-semibold text-gray-800 mb-2">Descrição:</h3>
                 <p class="text-gray-700 mb-6 leading-relaxed">{{ foto.description }}</p>
@@ -58,16 +55,13 @@
         </div>
         <div class="mt-8 text-center">
             <a href="{% url 'home' %}"
-                class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out shadow-lg">
-
+                class="inline-block bg-blue-400 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out shadow-lg">
                 &larr; Voltar para a Home
             </a>
         </div>
     </main>
+    <footer class="mt-12 p-6 text-center text-gray-600">
+        <p>&copy; 2025 Minhas Fotos. Todos os direitos reservados a Gabriel.</p>
+    </footer>
 </body>
-
-<footer class="mt-12 p-6 text-center text-gray-600">
-    <p>&copy; 2025 Minhas Fotos. Todos os direitos reservados a Gabriel.</p>
-</footer>
-
 </html>

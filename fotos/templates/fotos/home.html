@@ -44,7 +44,7 @@
             class="w-full max-w-lg flex bg-white rounded-full shadow-md overflow-hidden">
 
             <input type="text" placeholder="Pesquisar fotos..." name="q"
-                class="flex-grow p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-l-full pl-5">
+                class="flex-grow p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-l-full pl-5">
             <button type="submit" class="bg-blue-400 hover:bg-blue-600 text-white p-3 px-6 
 rounded-r-full transition duration-300 ease-in-out flex items-center justify-center">
                 <i class="fas fa-search mr-2"></i> Pesquisar
@@ -71,7 +71,7 @@ rounded-r-full transition duration-300 ease-in-out flex items-center justify-cen
                     <h3 class="text-xl font-bold mb-2 text-gray-800">{{ foto.title }}</h3>
                     <p class="text-gray-600 mb-4">{{ foto.description|truncatewords:20 }}</p>
                     <a href="{% url 'foto_detail' id=foto.id %}"
-                        class="text-orange-600 hover:text-orange-800 font-semibold">Ver Foto &rarr;</a>
+                        class="text-blue-400 hover:text-blue-600 font-semibold">Ver Foto &rarr;</a>
                 </div>
                 {% endfor %}
             {% else %}

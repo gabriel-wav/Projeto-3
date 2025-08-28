@@ -26,8 +26,7 @@
 
             <div class="flex items-center mb-4 sm:mb-0">
                 <div class="text-4xl mr-4">
-                    <i class="fas fa-utensils"></i>
-
+                    <i class="fas fa-camera"></i>
                 </div>
 
                 <h1 class="text-4xl font-bold text-center sm:text-left">
@@ -44,18 +43,14 @@
         <form method="get" action="{% url 'pesquisar_fotos' %}"
             class="w-full max-w-lg flex bg-white rounded-full shadow-md overflow-hidden">
 
-
             <input type="text" placeholder="Pesquisar fotos..." name="q"
                 class="flex-grow p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-l-full pl-5">
             <button type="submit" class="bg-blue-400 hover:bg-blue-600 text-white p-3 px-6 
 rounded-r-full transition duration-300 ease-in-out flex items-center justify-center">
                 <i class="fas fa-search mr-2"></i> Pesquisar
             </button>
-            </div>
         </form>
     </section>
-
-
 
     <main class="container mx-auto p-6 mt-8 bg-white rounded-lg shadow-md">
 
@@ -63,74 +58,26 @@ rounded-r-full transition duration-300 ease-in-out flex items-center justify-cen
             Fotos</h2>
 
         <div class="flex flex-wrap justify-center gap-6">
+            
+            {% if fotos %}
+                {% for foto in fotos %}
+                <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                    
+                    {% if foto.image %}
+                    <img src="{{ foto.image.url }}" alt="{{ foto.title }}"
+                        class="w-full h-48 object-cover rounded-md mb-4">
+                    {% endif %}
+                    
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">{{ foto.title }}</h3>
+                    <p class="text-gray-600 mb-4">{{ foto.description|truncatewords:20 }}</p>
+                    <a href="{% url 'foto_detail' id=foto.id %}"
+                        class="text-orange-600 hover:text-orange-800 font-semibold">Ver Foto &rarr;</a>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p class="text-center text-gray-600">Nenhuma foto cadastrada ainda.</p>
+            {% endif %}
 
-            <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-
-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow 
-duration-300 ease-in-out">
-                <img src="{% static 'galeria/brasil_escadarias.jpg' %}" alt="Escadarias no Rio de Janeiro"
-                    class="w-full h-48 object-cover rounded-md mb-4">
-                <h3 class="text-xl font-bold mb-2 text-gray-800">Escadarias no Rio de Janeiro</h3>
-                <p class="text-gray-600 mb-4">Clássica escadaria localizada no RJ.</p>
-                <a href="{% url 'foto_detail' id=1 %}"
-                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Foto &rarr;</a>
-            </div>
-
-            <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-
-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow 
-duration-300 ease-in-out">
-                <img src="{% static 'fotos/outra_foto.jpg' %}" alt="Outra foto"
-                    class="w-full h-48 object-cover rounded-md mb-4">
-                <h3 class="text-xl font-bold mb-2 text-gray-800">Outra Foto Qualquer</h3>
-                <p class="text-gray-600 mb-4">Uma outra foto aleatória para preencher o espaço.</p>
-                <a href="{% url 'foto_detail' id=2 %}"
-                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Foto &rarr;</a>
-            </div>
-
-            <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-
-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow 
-duration-300 ease-in-out">
-                <img src="{% static 'fotos/mais_uma_foto.jpg' %}" alt="Mais uma foto"
-                    class="w-full h-48 object-cover rounded-md mb-4">
-                <h3 class="text-xl font-bold mb-2 text-gray-800">Mais Uma Foto</h3>
-                <p class="text-gray-600 mb-4">Mais uma foto para preencher o espaço.</p>
-                <a href="{% url 'foto_detail' id=3 %}"
-                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Foto &rarr;</a>
-            </div>
-
-            <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-
-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow 
-duration-300 ease-in-out">
-                <img src="{% static 'fotos/foto_quatro.jpg' %}" alt="Foto Quatro"
-                    class="w-full h-48 object-cover rounded-md mb-4">
-                <h3 class="text-xl font-bold mb-2 text-gray-800">Torta de Morango</h3>
-                <p class="text-gray-600 mb-4">Uma foto de uma torta de morango.</p>
-                <a href="{% url 'foto_detail' id=4 %}"
-                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Foto &rarr;</a>
-            </div>
-
-            <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-
-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow 
-duration-300 ease-in-out">
-                <img src="{% static 'fotos/foto_cinco.jpg' %}" alt="Foto Cinco"
-                    class="w-full h-48 object-cover rounded-md mb-4">
-                <h3 class="text-xl font-bold mb-2 text-gray-800">Foto Cinco</h3>
-                <p class="text-gray-600 mb-4">Uma foto reconfortante e cheia de
-                    pedaços de vegetais frescos, perfeita para dias frios.</p>
-                <a href="{% url 'foto_detail' id=5 %}"
-                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Foto &rarr;</a>
-            </div>
-
-            <div class="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-
-1.5rem)] bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow 
-duration-300 ease-in-out">
-                <img src="{% static 'fotos/foto_seis.jpg' %}" alt="Foto Seis"
-                    class="w-full h-48 object-cover rounded-md mb-4">
-                <h3 class="text-xl font-bold mb-2 text-gray-800">Foto Seis</h3>
-                <p class="text-gray-600 mb-4">Uma foto cremosa e exótica, com
-                    uma mistura rica de cogumelos selvagens.</p>
-                <a href="{% url 'foto_detail' id=6 %}"
-                    class="text-orange-600 hover:text-orange-800 font-semibold">Ver Foto &rarr;</a>
-            </div>
         </div>
     </main>
 
@@ -146,7 +93,6 @@ duration-300 ease-in-out">
     <footer class="mt-12 p-6 text-center text-gray-600">
         <p>&copy; 2025 Minha Galeria de Fotos. Todos os direitos reservados a Gabriel.</p>
     </footer>
-
 
 </body>
 

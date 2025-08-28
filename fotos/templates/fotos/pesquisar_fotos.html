@@ -5,11 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultados</title>
+    <title>Resultados da Pesquisa</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-pf8MwF5b8kaJ+cG4kANg5pUjVzR3SGg3j3qY3qRZ6E0Y9+f+Eo/9C0jqg2xFx6c9+uGz6lN0dVVnV4f1BfM1xg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -21,7 +19,14 @@
 
     <header class="bg-gray-900 text-white p-6 shadow-lg rounded-b-lg">
         <div class="container mx-auto flex flex-col sm:flex-row items-center justify-center">
-            <h1 class="text-3xl font-bold">Resultados da Pesquisa</h1>
+            <div class="flex items-center mb-4 sm:mb-0">
+                <div class="text-4xl mr-4">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <h1 class="text-4xl font-bold text-center sm:text-left">
+                    Minha Galeria de Fotos
+                </h1>
+            </div>
         </div>
     </header>
 
@@ -51,13 +56,13 @@
                     </div>
                 {% endfor %}
             {% else %}
-                <p class="text-center text-gray-600">Nenhuma foto encontrada.</p>
+                <p class="text-center text-gray-600">Tente uma busca diferente ou <a href="{% url 'home' %}" class="text-orange-600 hover:text-orange-800 font-semibold">volte para a home</a>.</p>
             {% endif %}
         </div>
     </main>
 
     <footer class="mt-12 p-6 text-center text-gray-600">
-        <p>&copy; 2025 Minhas Fotos. Todos os direitos reservados a Gabriel.</p>
+        <p>&copy; 2025 Minha Galeria de Fotos. Todos os direitos reservados a Gabriel.</p>
     </footer>
 
 </body>
